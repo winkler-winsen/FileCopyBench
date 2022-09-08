@@ -26,10 +26,10 @@ $TimeStampDiffSec = 60*60*$TimeStampDiff.Hours `
     + ($TimeStampDiff.Milliseconds/1000)
 Write-Output "$TimeStampDiffSec Diff Sec"
 
-Write-Output $($TestFileSize/1MB)
+Write-Output "$([math]::Round($TestFileSize/1MB)) MB"
 
 $MBits = $TestFileSize/1MB*8 / $TimeStampDiffSec
-Write-Output "$Mbits MBit/s"
+Write-Output "$([math]::Round($Mbits,2)) MBit/s"
 
 if (-Not(Test-Path -Path .\copybench.csv)) {
     Write-Output ("TestFileSize;TimeStampStart;TimeStampEnd;TimeStampDiffSec;MBits")`

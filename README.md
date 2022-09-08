@@ -7,8 +7,8 @@ Perfomes file copy operation with taking time stamps to calc bandwidth im MBit/s
 22:09:44,977 Start
 22:09:52,040 End
 7.063 Diff Sec
-320,18359375
-362.660165651989 MBit/s
+320 MB
+362.66 MBit/s
 ```
 
 ### CSV (comma separated file)
