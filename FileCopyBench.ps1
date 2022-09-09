@@ -5,7 +5,7 @@
 
 $TestFile = "filesystem::\\DiskStation\Public\Synology Restore Media.iso"
 $CsvFile = "FileCopyBench.csv"
-$TimeStampFormat = "HH:MM:ss,fff"
+$TimeStampFormat = "HH:mm:ss,fff"
 
 $TestFileSize = (Get-Item -Path $TestFile).Length
 
