@@ -20,6 +20,6 @@ TestFileSize;TimeStampStart;TimeStampEnd;TimeStampDiffSec;MBits
 
 Test file with path and UNC support ```$TestFile = "filesystem::\\DiskStation\Public\Synology Restore Media.iso"``` 
 
-Time stamp format ```$TimeStampFormat = "HH:MM:ss,fff"``` (US should be ```HH:MM:ss.fff```)
+Time stamp format ```$TimeStampFormat = "HH:mm:ss,fff"``` (US should be ```HH:MM:ss.fff```)
 
 CSV file ```$CsvFile = "FileCopyBench.csv"```
