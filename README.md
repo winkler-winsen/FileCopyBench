@@ -1,5 +1,5 @@
 # FileCopyBench
-Perfomes file copy operation with taking time stamps to calc bandwidth im MBit/s. Outputs statistics and saves CSV file
+Performes file copy operation with taking time stamps to calc bandwidth im MBit/s. Outputs statistics and saves to CSV file
 
 ## Output examples
 ### Terminal
