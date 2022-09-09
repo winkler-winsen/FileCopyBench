@@ -31,7 +31,7 @@ Write-Output "$([math]::Round($TestFileSize/1MB)) MB"
 $MBits = $TestFileSize/1MB*8 / $TimeStampDiffSec
 Write-Output "$([math]::Round($Mbits,2)) MBit/s"
 
-if (-Not(Test-Path -Path .\copybench.csv)) {
+if (-Not(Test-Path -Path $CsvFile)) {
     Write-Output ("TestFileSize;TimeStampStart;TimeStampEnd;TimeStampDiffSec;MBits")`
     | Out-File $CsvFile
 }
