@@ -1,15 +1,16 @@
 #
 # Author: Lars Winkler <lars@winkler-winsen.de>
-# Date:   08.09.2022
+# Date:   17.09.2022
 #
 
 #region Initinalize
-$TestFile = "filesystem::\\DiskStation\Public\Synology Restore Media.iso"
-$CsvFile = "FileCopyBench.csv"
-$CsvDelimiter = ';' # Have to be different to $TimeStampFormat delimiters
-$TimeStampFormat = "HH:mm:ss,fff"
-
-
+$TestFile = 'filesystem::\\DiskStation\Public\Synology Restore Media.iso'
+$CsvFile = 'FileCopyBench.csv'
+$CsvDelimiter = ';' 
+    # Have to be different to $TimeStampFormat delimiters 
+    # English format should be ','
+$TimeStampFormat = 'HH:mm:ss,fff' 
+    # English format should be "HH:mm:ss.fff"
 $TestFileSize = (Get-Item -Path $TestFile).Length
 #endregion Initialize
 
@@ -17,12 +18,12 @@ $TestFileSize = (Get-Item -Path $TestFile).Length
 $TimeStampStart = Get-Date
 Write-Output "$($TimeStampStart.ToString($TimeStampFormat)) Start"
 
-Copy-Item $TestFile "test.dat"
+Copy-Item $TestFile 'test.dat'
 
 $TimeStampEnd = Get-Date
 Write-Output "$($TimeStampEnd.ToString($TimeStampFormat)) End"
 
-Remove-Item -Force "test.dat"
+Remove-Item -Force 'test.dat'
 #endregion FileCopy
 
 #region Calculation
@@ -33,10 +34,9 @@ $TimeStampDiffSec = 60*60*$TimeStampDiff.Hours `
     + ($TimeStampDiff.Milliseconds/1000)
 $MBits = $TestFileSize/1MB*8 / $TimeStampDiffSec
 #endregion Calculation
+
 Write-Output "$TimeStampDiffSec Diff Sec"
-
 Write-Output "$([math]::Round($TestFileSize/1MB)) MB"
-
 Write-Output "$([math]::Round($Mbits,2)) MBit/s"
 
 #region CsvOutput
